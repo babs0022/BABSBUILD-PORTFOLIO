@@ -8,9 +8,9 @@
     <meta name="author" content="BABSBUILD">
     <meta property="og:title" content="BABSBUILD | Web3 Developer & Product Designer">
     <meta property="og:description" content="Portfolio of BABSBUILD - Web3 Developer & Product Designer.">
-    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1993627226911223808/3sPxec19_400x400.jpg">
+    <meta property="og:image" content="/public/images/myphotopfp.jpg">
     <meta property="og:url" content="https://babsbuild.xyz">
-    <link rel="icon" href="https://pbs.twimg.com/profile_images/1993627226911223808/3sPxec19_400x400.jpg">
+    <link rel="icon" href="/public/images/myphotopfp.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,16 +31,44 @@
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Coinbase Sans';
+            src: url('/public/fonts/CoinbaseSans-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Coinbase Sans';
+            src: url('/public/fonts/CoinbaseSans-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Coinbase Sans';
+            src: url('/public/fonts/CoinbaseSans-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Coinbase Sans';
+            src: url('/public/fonts/CoinbaseSans-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
         :root {
-            --font-display: 'Inter Tight', sans-serif;
+            --font-display: 'Coinbase Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
         body {
             font-family: var(--font-display);
             background-color: #030303;
             color: #a1a1aa;
+            font-weight: 300; /* Apply lighter weight to body content */
         }
         .font-mono-custom {
             font-family: var(--font-mono);
@@ -64,11 +92,21 @@
             background: #262626;
             border-radius: 3px;
         }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030303;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 3px;
+        }
         ::-webkit-scrollbar-thumb:hover {
             background: #404040;
         }
-        /* Preloader Styles */
-        #preloader {
+                #preloader {
             position: fixed;
             inset: 0;
             z-index: 9999;
@@ -76,19 +114,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-            opacity: 1;
-            visibility: visible;
+            transition: opacity 0.5s ease-out;
         }
+
         #preloader.hidden {
             opacity: 0;
-            visibility: hidden;
+            pointer-events: none;
         }
+
         #preloader img {
             width: 128px; /* 8rem */
             height: 128px; /* 8rem */
             border-radius: 9999px; /* rounded-full */
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .hero-pfp-container img {
+            aspect-ratio: 1 / 1;
         }
         @keyframes pulse {
             0%, 100% {
@@ -100,13 +141,24 @@
                 transform: scale(1.05);
             }
         }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-out;
+        }
+        .no-scroll {
+            overflow: hidden;
+        }
+        .content-hidden {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
     </style>
 </head>
-<body class="antialiased selection:bg-blue-500/20 selection:text-blue-200">
+<body class="antialiased selection:bg-blue-500/20 selection:text-blue-200 no-scroll">
 
     <!-- Preloader -->
     <div id="preloader">
-        <img src="https://pbs.twimg.com/profile_images/1993627226911223808/3sPxec19_400x400.jpg" alt="BABSBUILD Loading...">
+        <img src="/public/images/myphotopfp.jpg" alt="BABSBUILD Loading...">
     </div>
 
     <!-- Background Grid -->
@@ -120,7 +172,7 @@
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2 group">
                 <div class="w-8 h-8 rounded bg-white5 border border-white10 flex items-center justify-center group-hoverbg-white10 transition-colors overflow-hidden">
-                    <img src="https://pbs.twimg.com/profile_images/1993627226911223808/3sPxec19_400x400.jpg" alt="BABSBUILD" class="w-full h-full object-cover rounded">
+                    <img src="/public/images/myphotopfp.jpg" alt="BABSBUILD" class="w-full h-full object-cover rounded">
                 </div>
                 <span class="text-sm font-medium text-white tracking-tight">BABSBUILD</span>
             </a>
@@ -134,24 +186,32 @@
 
             <div class="flex items-center gap-3 md:hidden">
                 <button id="menu-btn" class="text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"></div>
+
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#030303]/95 backdrop-blur-xl flex-col items-center justify-center space-y-8">
-        <button id="close-btn" class="absolute top-6 right-6 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-        <a href="#about" class="mobile-menu-link text-2xl text-white hover:text-blue-400 transition-colors">About</a>
-        <a href="#ecosystem" class="mobile-menu-link text-2xl text-white hover:text-blue-400 transition-colors">Ecosystem</a>
-        <a href="#work" class="mobile-menu-link text-2xl text-white hover:text-blue-400 transition-colors">My Work</a>
-        <a href="#contact" class="mobile-menu-link text-2xl text-white hover:text-blue-400 transition-colors">Contact</a>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] border-b border-white/10 p-6 rounded-b-2xl shadow-xl transform -translate-y-full">
+        <div class="flex justify-between items-center mb-6">
+            <h3 class="text-white font-medium">Menu</h3>
+            <button id="close-btn" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <a href="#about" class="mobile-menu-link text-lg text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="#ecosystem" class="mobile-menu-link text-lg text-gray-300 hover:text-white transition-colors">Ecosystem</a>
+            <a href="#work" class="mobile-menu-link text-lg text-gray-300 hover:text-white transition-colors">My Work</a>
+            <a href="#contact" class="mobile-menu-link text-lg text-gray-300 hover:text-white transition-colors">Contact</a>
+        </div>
     </div>
 
-    <main class="z-10 flex flex-col max-w-6xl mr-auto ml-auto pt-48 pr-6 pb-20 pl-6 relative items-center">
+    <main class="z-10 flex flex-col max-w-6xl mr-auto ml-auto pt-48 pr-6 pb-20 pl-6 relative items-center content-hidden">
         
         <!-- Hero Section -->
         <section class="flex flex-col lg:flex-row items-center gap-12 w-full mb-32">
@@ -161,7 +221,7 @@
                     BABSBUILD
                 </h1>
 
-                <h2 class="md:text-4xl leading-[1.1] text-2xl font-medium text-gray-300 tracking-tighter max-w-4xl mb-6">Web3 Developer, Product Designer, Product Engineer, Community Builder and Educator Building Solutions to core Onchain Problems.</h2>
+                <h2 class="md:text-4xl leading-[1.1] text-2xl font-normal text-gray-300 tracking-tighter max-w-4xl mb-6">Web3 Developer, Product Designer, Product Engineer, Community Builder and Educator Building Solutions to core Onchain Problems.</h2>
                 
                 <p class="leading-relaxed xl:text-zinc-400 text-lg font-medium tracking-wider max-w-xl mb-10">I'm Babs, I Build, I Create, I Educate, I Learn.</p>
 
@@ -197,7 +257,7 @@
                 <!-- PFP Image -->
                 <div class="relative w-80 h-80 md:w-96 md:h-96">
                      <!-- Using GitHub PFP URL which typically matches dev profile if uploaded -->
-                    <img src="https://pbs.twimg.com/profile_images/1993627226911223808/3sPxec19_400x400.jpg" alt="BABSBUILD Profile" class="w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500 bg-[#0a0a0a]">
+                    <img src="/public/images/myphotopfp.jpg" alt="BABSBUILD Profile" class="w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500 bg-[#0a0a0a]">
                 </div>
 
                 <!-- Glass Component Tag -->
@@ -224,7 +284,7 @@
             <div class="flex flex-col-reverse lg:flex-row gap-12 items-center lg:items-start mb-16 w-full">
                 <!-- Text Content -->
                 <div class="flex-1">
-                    <h3 class="text-3xl md:text-4xl font-medium text-white tracking-tight mb-6 leading-tight">Bridging the Gap Between Code and Community.</h3>
+                    <h3 class="text-3xl md:text-4xl font-normal text-white tracking-tight mb-6 leading-tight">Bridging the Gap Between Code and Community.</h3>
                     <p class="text-lg md:text-xl text-gray-400 font-light leading-relaxed">
                         I am more than just a builder; I am a catalyst for Web3 adoption. As an <span class="text-white font-medium">Educator</span> and strategic <span class="text-white font-medium">Onboarder</span> for the Base ecosystem, I have dedicated my career to illuminating the path for the next generation of users and developers. My work goes beyond shipping products—it's about creating the educational infrastructure that allows others to thrive. By combining technical expertise with community-first strategies, I ensure that every individual I onboard understands the true power of onchain technology, giving them the "colors" and recognition they deserve in this new digital economy.
                     </p>
@@ -875,23 +935,7 @@
 
                 
 
-                                            // Mobile Menu Toggle
-
-                
-
-                                            const menuBtn = document.getElementById('menu-btn');
-
-                
-
-                                            const closeBtn = document.getElementById('close-btn');
-
-                
-
-                                            const mobileMenu = document.getElementById('mobile-menu');
-
-                
-
-                                            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+                                                                    // Mobile Menu Toggle
 
                 
 
@@ -899,19 +943,7 @@
 
                 
 
-                                            function toggleMenu() {
-
-                
-
-                                                mobileMenu.classList.toggle('hidden');
-
-                
-
-                                                mobileMenu.classList.toggle('flex');
-
-                
-
-                                            }
+                                                                    const menuBtn = document.getElementById('menu-btn');
 
                 
 
@@ -919,31 +951,35 @@
 
                 
 
-                                            menuBtn.addEventListener('click', toggleMenu);
+                                                                    const closeBtn = document.getElementById('close-btn');
 
                 
 
-                                            closeBtn.addEventListener('click', toggleMenu);
+                    
 
                 
 
-                                                                                        mobileMenuLinks.forEach(link => {
+                                                                    const mobileMenu = document.getElementById('mobile-menu');
 
                 
 
-                                                            
+                    
 
                 
 
-                                                                                            link.addEventListener('click', toggleMenu);
+                                                                    const menuOverlay = document.getElementById('menu-overlay');
 
                 
 
-                                                            
+                    
 
                 
 
-                                                                                        });
+                                                                    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+                
+
+                    
 
                 
 
@@ -951,44 +987,240 @@
 
                 
 
-                                                                                        // Preloader
+                    
 
                 
 
-                                                                                        window.onload = function() {
+                                                                    function openMenu() {
 
                 
 
-                                                                                            const preloader = document.getElementById('preloader');
+                    
 
                 
 
-                                                                                            preloader.classList.add('hidden');
+                                                                        mobileMenu.classList.remove('-translate-y-full');
 
                 
 
-                                                                                        };
+                    
 
                 
 
-                                                            
+                                                                        menuOverlay.classList.remove('hidden');
 
                 
 
-                                                                                    </script>
+                    
 
                 
 
-                                                            
+                                                                    }
 
                 
 
-                                                                                
+                    
 
                 
 
-                                                            
+                                            
 
                 
 
-                                                                                </body></html>
+                    
+
+                
+
+                                                                    function closeMenu() {
+
+                
+
+                    
+
+                
+
+                                                                        mobileMenu.classList.add('-translate-y-full');
+
+                
+
+                    
+
+                
+
+                                                                        menuOverlay.classList.add('hidden');
+
+                
+
+                    
+
+                
+
+                                                                    }
+
+                
+
+                    
+
+                
+
+                                            
+
+                
+
+                    
+
+                
+
+                                                                    menuBtn.addEventListener('click', openMenu);
+
+                
+
+                    
+
+                
+
+                                                                    closeBtn.addEventListener('click', closeMenu);
+
+                
+
+                    
+
+                
+
+                                                                    menuOverlay.addEventListener('click', closeMenu);
+
+                
+
+                    
+
+                
+
+                                                                    mobileMenuLinks.forEach(link => {
+
+                
+
+                    
+
+                
+
+                                                                        link.addEventListener('click', closeMenu);
+
+                
+
+                    
+
+                
+
+                                                                    });
+
+                
+
+                                            
+
+                
+
+                                                                                                                                    // Preloader
+
+                
+
+                                            
+
+                
+
+                                                                                                                                    window.onload = function() {
+
+                
+
+                                            
+
+                
+
+                                                                                                                                        const preloader = document.getElementById('preloader');
+
+                
+
+                                            
+
+                
+
+                                                                                                                                        const mainContent = document.querySelector('main');
+
+                
+
+                                            
+
+                
+
+                                                                                                                                        document.body.classList.remove('no-scroll');
+
+                
+
+                                            
+
+                
+
+                                                                                                                                        preloader.classList.add('hidden');
+
+                
+
+                                            
+
+                
+
+                                                                                                                                        mainContent.classList.remove('content-hidden');
+
+                
+
+                                            
+
+                
+
+                                                                                                                                    };
+
+                
+
+                                            
+
+                
+
+                                                                                                        
+
+                
+
+                                            
+
+                
+
+                                                                                                                                </script>
+
+                
+
+                                            
+
+                
+
+                                                                                                        
+
+                
+
+                                            
+
+                
+
+                                                                                                                            
+
+                
+
+                                            
+
+                
+
+                                                                                                        
+
+                
+
+                                            
+
+                
+
+                                                                                                                            </body></html>
