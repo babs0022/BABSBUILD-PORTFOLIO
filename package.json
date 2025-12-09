@@ -1,0 +1,14 @@
+{
+  "name": "babsbuild-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of BABSBUILD - Web3 Developer, Product Designer, and Vibe-Coder.",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server"
+  },
+  "author": "BABSBUILD",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
