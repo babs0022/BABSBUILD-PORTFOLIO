@@ -67,9 +67,47 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #404040;
         }
+        /* Preloader Styles */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: #030303;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            opacity: 1;
+            visibility: visible;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        #preloader img {
+            width: 128px; /* 8rem */
+            height: 128px; /* 8rem */
+            border-radius: 9999px; /* rounded-full */
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-blue-500/20 selection:text-blue-200">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="https://pbs.twimg.com/profile_images/1993627226911223808/3sPxec19_400x400.jpg" alt="BABSBUILD Loading...">
+    </div>
 
     <!-- Background Grid -->
     <div class="fixed inset-0 pointer-events-none z-0 bg-grid h-screen w-full"></div>
@@ -889,24 +927,68 @@
 
                 
 
-                                            mobileMenuLinks.forEach(link => {
+                                                                                        mobileMenuLinks.forEach(link => {
 
                 
 
-                                                link.addEventListener('click', toggleMenu);
+                                                            
 
                 
 
-                                            });
+                                                                                            link.addEventListener('click', toggleMenu);
 
                 
 
-                                        </script>
+                                                            
 
                 
 
-                                    
+                                                                                        });
 
                 
 
-                                    </body></html>
+                                            
+
+                
+
+                                                                                        // Preloader
+
+                
+
+                                                                                        window.onload = function() {
+
+                
+
+                                                                                            const preloader = document.getElementById('preloader');
+
+                
+
+                                                                                            preloader.classList.add('hidden');
+
+                
+
+                                                                                        };
+
+                
+
+                                                            
+
+                
+
+                                                                                    </script>
+
+                
+
+                                                            
+
+                
+
+                                                                                
+
+                
+
+                                                            
+
+                
+
+                                                                                </body></html>
