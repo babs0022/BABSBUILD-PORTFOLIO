@@ -8,9 +8,9 @@
     <meta name="author" content="BABSBUILD">
     <meta property="og:title" content="BABSBUILD | Web3 Developer & Product Designer">
     <meta property="og:description" content="Portfolio of BABSBUILD - Web3 Developer & Product Designer.">
-    <meta property="og:image" content="/public/images/myphotopfp.jpg">
+    <meta property="og:image" content="https://babsbuild.xyz/images/myphotopfp.jpg">
     <meta property="og:url" content="https://babsbuild.xyz">
-    <link rel="icon" href="/public/images/myphotopfp.jpg">
+    <link rel="icon" href="/images/myphotopfp.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,28 +34,28 @@
     <style>
         @font-face {
             font-family: 'Coinbase Sans';
-            src: url('/public/fonts/CoinbaseSans-Light.woff2') format('woff2');
+            src: url('/fonts/CoinbaseSans-Light.woff2') format('woff2');
             font-weight: 300;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: 'Coinbase Sans';
-            src: url('/public/fonts/CoinbaseSans-Regular.woff2') format('woff2');
+            src: url('/fonts/CoinbaseSans-Regular.woff2') format('woff2');
             font-weight: 400;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: 'Coinbase Sans';
-            src: url('/public/fonts/CoinbaseSans-Medium.woff2') format('woff2');
+            src: url('/fonts/CoinbaseSans-Medium.woff2') format('woff2');
             font-weight: 500;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: 'Coinbase Sans';
-            src: url('/public/fonts/CoinbaseSans-Bold.woff2') format('woff2');
+            src: url('/fonts/CoinbaseSans-Bold.woff2') format('woff2');
             font-weight: 700;
             font-style: normal;
             font-display: swap;
@@ -158,7 +158,7 @@
 
     <!-- Preloader -->
     <div id="preloader">
-        <img src="/public/images/myphotopfp.jpg" alt="BABSBUILD Loading...">
+        <img src="/images/myphotopfp.jpg" alt="BABSBUILD Loading...">
     </div>
 
     <!-- Background Grid -->
@@ -172,7 +172,7 @@
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center gap-2 group">
                 <div class="w-8 h-8 rounded bg-white5 border border-white10 flex items-center justify-center group-hoverbg-white10 transition-colors overflow-hidden">
-                    <img src="/public/images/myphotopfp.jpg" alt="BABSBUILD" class="w-full h-full object-cover rounded">
+                    <img src="/images/myphotopfp.jpg" alt="BABSBUILD" class="w-full h-full object-cover rounded">
                 </div>
                 <span class="text-sm font-medium text-white tracking-tight">BABSBUILD</span>
             </a>
@@ -257,7 +257,7 @@
                 <!-- PFP Image -->
                 <div class="relative w-80 h-80 md:w-96 md:h-96">
                      <!-- Using GitHub PFP URL which typically matches dev profile if uploaded -->
-                    <img src="/public/images/myphotopfp.jpg" alt="BABSBUILD Profile" class="w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500 bg-[#0a0a0a]">
+                    <img src="/images/myphotopfp.jpg" alt="BABSBUILD Profile" class="w-full h-full object-cover rounded-2xl border border-white/10 shadow-2xl rotate-2 group-hover:rotate-0 transition-all duration-500 bg-[#0a0a0a]">
                 </div>
 
                 <!-- Glass Component Tag -->
@@ -346,7 +346,11 @@
                         <!-- Timeline Visual -->
                         <div class="relative pl-4 border-l border-white/10 space-y-8 my-6">
                             <div class="relative">
-                                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-gray-600 ring-4 ring-[#0a0a0a]"></div>
+                                <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-green-500 ring-4 ring-[#0a0a0a] flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
                                 <p class="text-xs text-gray-500 font-mono-custom mb-1">2024 - EARLY 2025</p>
                                 <p class="text-white text-sm font-medium">Onboarded 50+ folks to Base</p>
                                 <p class="text-xs text-gray-500 mt-1">Personal outreach &amp; spaces</p>
@@ -383,6 +387,17 @@
                         <div>
                             <h4 class="text-white font-medium mb-1 group-hover:text-green-300 transition-colors">Telegram Price Bot</h4>
                             <p class="text-sm text-gray-400">Built a lightweight Telegram bot that fetches and updates the real-time price of Ethereum every 30 seconds.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mini Brick Breaker Game -->
+                    <div class="bg-[#0a0a0a] border border-white/5 rounded-3xl p-6 flex items-start gap-4 hover:bg-white/[0.02] transition-colors group">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex-shrink-0 flex items-center justify-center text-red-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" data-icon="lucide:gamepad" data-width="24" data-height="24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 12h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2v2"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20v2"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.93 4.93L7.76 7.76"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.24 16.24l2.83 2.83"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.93 19.07l2.83-2.83"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.24 7.76l2.83-2.83"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1 group-hover:text-red-300 transition-colors"><a href="https://brick-breakergame.vercel.app/" target="_blank">Mini Brick Breaker Game</a></h4>
+                            <p class="text-sm text-gray-400">Developed a classic brick breaker game, featuring intuitive controls and engaging gameplay mechanics.</p>
                         </div>
                     </div>
 
